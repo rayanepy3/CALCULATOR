@@ -1,0 +1,35 @@
+nombre1 = input("entrez un nombre : ")
+nombre2 = input ("entrez un autre nombre :")
+
+nombre1 = nombre1.strip()
+nombre2 = nombre2.strip()
+
+if not nombre1.isnumeric() or not nombre2.isnumeric():
+    raise SystemExit("Fin du programme")
+
+
+nombre1 = int(nombre1) 
+nombre2 = int(nombre2)
+
+operation = input("Quelle opération souhaitez-vous ? ['+', '-', '*', '/'] : ")
+
+if operation not in ('+', '-', '*', '/'):
+    raise SystemExit("Fin du programme")
+
+if operation == "+":
+    resultat = nombre1 + nombre2
+elif operation == "-":
+    resultat = nombre1-nombre2
+elif operation == "*":
+    resultat = nombre1 * nombre2
+elif operation == "/":
+ 
+    if nombre2==0:
+        print("erreur : division par 0")
+        raise SystemExit("fin du programme")
+    
+    resultat = round(nombre1/nombre2, 2)
+    
+    
+    
+print(f"le resultat de {nombre1}{operation} {nombre2}= {resultat}")
